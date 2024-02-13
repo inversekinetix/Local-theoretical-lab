@@ -1,0 +1,697 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Electromagnetic correlates of neural circuitry</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ec8b8983-6164-491f-b24b-858ac7dbf69b" class="page sans"><header><h1 class="page-title">Electromagnetic correlates of neural circuitry</h1><p class="page-description"></p></header><div class="page-body"><p id="9205178e-be1d-428d-80c6-c7d4bd128716" class="">Neural circuits are not (usually) thought of as discrete programmatic elements that work in a small way.Instead, it is the architecture of the cell clusters together with the axon and dendrites of individual cells that constitutes the circuitry of a neuron. Part of that architecture is the criss-crossing, point to point connectivity of dendrites and axons with their cell bodies but also through gap junctions, in a particular network of cell clusters of course.</p><p id="cf71e249-aac1-428e-bebb-a18e68e9ac0b" class=""><br/>Neural circuits are not made &quot;on the spot&quot;.In particular, excitation of neural circuits will generate appropriate information patterns through a time-integrated and location-dependent manner. Different groups of neurons are said to be in the same &quot;neurocolumn&quot;. Thus, epinephrine and dopamine could be correlated with specific instances of simultaneous arousal in the absence of external sensory stimulation. Such as that which happens in a lower-level visual field in the Rhesus:http://www.uniconsult.com/linkinginthemind/fusionofthebrain.htmLacking such facility, I should think it highly unlikely that one has a sense of danger approaching along the counter, but involuntary apprehensions that such a probability is negligible in the desexed monkeys&#x27; presence. What, then, are the recorded interspike period changes for short-term covert attention to be correlated with? Surely - for the same rationale - it is imperative to be aware of components of our own presence, otherwise there is no way of estimating surprise from threat.<br/></p><p id="e8f556d8-eda8-4f03-b965-9c57314ce9a4" class="">
+</p><p id="e2cd38d9-ec4e-4db3-aa01-f71e9d3ab616" class="">
+</p><p id="4bf65ce4-0100-4e0b-a325-c880fd314251" class="">
+</p><p id="ecbedded-eafd-4c88-a57b-eefcdb049b90" class="">Neural circuits are tightly wired and don’t like to change their structure constantly. The magnetic field generated by the nerve cell membrane depolarization (as mediated through sodium channels) propagates over a long distance. By analogy think about an airplane flying at high altitude. The magnetic field of the plane intensifies with increasing altitude just like the magnetic field. There isn’t a correlation for social Brahmin status in general.  </p><p id="0d67fa4a-0349-4c85-a776-d7b1a03e0521" class="">
+</p><p id="f7ef9be2-5beb-4c94-aa82-dc1de89be4fa" class="">Neural circuits are difficult to visualize and quantify, so those are not visible; for that the term &quot;neurophysiology&quot; is used.However, the neural firing patterns do correlate with the stimuli they respond to, so, in order of increasing complexity:<br/>Firing patterns of a single neuron: exact impulse timesConnector: existence and type of a chemical bond between two neurons, which is usually a synapse. Often &quot;conduction velocity&quot; (= the rate that an impulse travels through that synaptic gap), but more accurately &quot;propagation delay&quot;, which is exceptionally short (e.g., &lt; 1 msec.).Population: delivery of input to a group of neurons. Greater the number of neurons, and lesser the connections between them.<br/>Example: input to single neuron<br/></p><p id="19b40e5f-0674-44aa-b73f-5b2b97d97b72" class=""><br/>Neural circuits are made up of neurons in concert signalling with one another to exert a net effect. Neurons are not the ones that oscillate in the brain, rather the resulting synchronised activity of different areas is what manifests itself to self-recognition. This process studies show to be linked to breathing. It is important to note that any process, including the ones correlated by the electromagnetism, comes about depending on where each neuron is located at any point. An increase or decrease in these properties of neurons, can artificially &quot;hype&quot; or &quot;demagnetise&quot; particular areas of the brain.In research which observes this activity, stimulation of specific regions of the brain can Alter the behaviour of certain animals. Hence correlations such as &quot;things that look like each other, behave the same&quot;.Obviously not all electromagnetism is associated with the brain, but that&#x27;s done for simplicity.See this source for more information on synchronisation.<br/><br/></p><p id="362e4bfb-156a-4ca8-a3cb-5060cb3b3e0e" class="">
+</p><p id="2165e146-3537-4c95-9eb6-9010e2a04874" class="">Neural circuits and oscillators are related mathematically via the equations of physics/electromagnetism. There are many different perspectives on how the brain encodes information (or at least the computational hardware that does the encoding), and it is possible that memory traces are generically encoded by different spatial and temporal coherent waves and oscillations at multiple frequencies, stemming from different anatomical places, and so perhaps you should try incorporating these ideas into your models. Bókkon (2004) and Buzsáki (2006) have written excellent reviews on various levels of the taktilike neuron circuit in the brain, which include detailed computational and back-propagation models. Moreover, the authors point out some of the unsolved questions in the literature and what is needed to push forward the field.Reference:Buzsáki, G. (2006). Rhythms of the Brain. Nature. 444, 703-712.Bókkon, K. (2020). Buzsáki and Moser. Neuron. 2001; 32(5), 699-704.<br/><br/></p><p id="dc3ed359-f0f4-4211-977a-5acdee956466" class=""><br/>Neural circuits will not include any biochemical to any great degree.Biochemicals might be found to change as a result of a poor diet (within limits, which you will understand).We don&#x27;t really know, and couldn&#x27;t treat it as a &quot;cause&quot; even if we wanted to, because, well neural circuits cause some of those biochemical changes.<br/>Hunger-caused changes in the distribution of power within the nervous sytems cause certain biochemical changes to facilitate the behavior that caused the hunger.<br/>You are operating under the assumption that an electromagnetic correlate would have the same function as the proven biochemical correlate, which is very unlikely.Electro-magnetic correlates would cause changes in our body chemistry that would be, I would say, &quot;difficult to predict&quot;.<br/>Say the brain distributes the 5&#x27; isomer to where 5egiso3e2com3 occurs more in the sub-somisommal areas that trigger the biochemical change in the CNS that supposedly causes hunger.<br/>All of those changes can happen totally internally to the CNS. An electromagnetic change to a mere nerve cell, or to a short distance, will not alter the distribution of just 5&#x27; isomer to those cells.<br/>MRI shows only relationships in the body.<br/>Yes, and the limits of those relationships has to be the atoms that keep the body connected to itself.The chemical pathways between what part of the body to what part of the body are long.The transmission of energy, as you said, through a &quot;circuit&quot; (which I&#x27;m choosing to accept as a mechanism other than electromagnetic) alters other properties of the body to some extent.This might be stronger depending on global behavior, which is a global effect that we can&#x27;t predict, and thus an electromagnetic effect is not needed.<br/>But we can still predict the effect. If the HSBC stock goes up, my HSBC account will only increase by the five dollars I put in. This is mattisons for the output.<br/>Can you predict what would happen across such a large distance<br/></p><p id="e67fdf19-35c7-4496-81fa-29837037d733" class="">
+</p><p id="55ded653-0386-43ee-a9e1-5940fb80d8a4" class="">
+</p><p id="9a026719-4a1a-46ff-8ec6-dc1bdfa8d91f" class="">Neural circuits are made of neurons. Neurons fire when they receive a pulse of current, the pulse of current is called a &quot;Sharp Spiking Current&quot;.In order to a neuron to fire, it must receive a sharp firing spike of electric current. The more, the bigger the better. Sharp spikes are created in the brain by the expulsion of charged ions. When a neuron spikes, it sends, via the electricity pulses, information to the brain.Through electricity, spike pulses are controlled. An electrical charge, by itself, cannot &quot;do&quot; anything because it is neutral in nature. It is only when it is charged (what we call &quot;positive&quot; or &quot;negative&quot;) with + electricity or -electricity that those currents have the ability to do the things that Nature does. All goes back to the VRLA Law of Induced Electricity:</p><p id="6d860220-d94f-4e09-bb70-4bd931da7da0" class="">
+</p><p id="c2229365-e045-4b85-b5ca-bff4b5dc1cc0" class="">Neural circuits are made of neurons. Neurons fire when they receive a pulse of current, the pulse of current is called a &quot;Sharp Spiking Current&quot;.In order to a neuron to fire, it must receive a sharp firing spike of electric current. The more, the bigger the better. Sharp spikes are created in the brain by the expulsion of charged ions. When a neuron spikes, it sends, via the electricity pulses, information to the brain.Through electricity, spike pulses are controlled. An electrical charge, by itself, cannot &quot;do&quot; anything because it is neutral in nature. It is only when it is charged (what we call &quot;positive&quot; or &quot;negative&quot;) with + electricity or -electricity that those currents have the ability to do the things that Nature does. All goes back to the VRLA Law of Induced Electricity:<br/>If you have an active membrane in a non-uniform electric field, thefield will move ion across the MD away from regions where the field isstronger.<br/>thus, if one region of the membrane of a neuron was to have more -spike charges than +spike charges on it, that region would most easily cause that region to &quot;fire&quot; by the current from the membrane. Why? because the electric field of the membrane would tend to push out the positive charges and not as much of the negative charges.So a neuron receives its electricity from two sources.<br/>From the Chloro&#x27;s nucleusForm the outside world<br/>The above image is known as the Energy Source, the Community and Vitality System and was first being documented in the medical literature in the 1980&#x27;s so we can be fairly sure that the neural impulse was first occurring between 1950 and 1975.Additionally, here how the neural impulse order of creation compares to our current day.<br/>Partials should not be taught because they are false.<br/></p><p id="1cb3217c-20b9-45ee-9d63-996fbf9e932b" class="">
+</p><p id="bc72c87a-d25a-4cd9-a23d-dba24ceab16c" class=""><br/>Neural circuits are microcircuits,synapses,and macircuits.<br/>Microcircuits are at the nanoscale and involve individual or small numbers of neurons.<br/>“Transcranial magnetic stimulation is a noninvasive and fairlypractical technique that modulates a target brain area.” - ref?“Transcranial direct currentstimulation (tDCS)an emerging technique to selectivelymodulate the excitability of localized brain areas through theapplication of low direct currents to scalp electrodes.” - ref?<br/>Synapses are the junctionswhere the &quot;signal&quot; is multiplied and one or more &quot;signals&quot;are &quot;passed on&quot; to a downstream &quot;neuron&quot;.<br/>signaling cell: synapse neuron<br/>macircuits are collections of &quot;microcircuits&quot; in the brainand nervous system<br/>[reference asks about short-term memory]Macircuits refer to the networks in the brain and nerves.There is no single accepted definition of &quot;macircuits&quot;but, usually it refers to the brain,with input and output connections at the cellular neural network level.This can also be applied to higher scales e.g. regional brain areas and functions.Cognitive psychologists and other specialists in the brainlike to study networks.Macircuits are defined by specific functions:<br/>e.g. visual, frontal<br/>and many others.That may be one of the reasons that the word &quot;modes&quot; is preferred.Since &quot;macircuits&quot; also encompass physiological terms,e.g. GABA, norepinepherine, serotonin, various brain imaging results.I am open to other suggestions but, after thinking for a while,I agree that &quot;modes&quot; is more utilitarian than &quot;circuits&quot;.<br/></p><p id="83a5896d-6b50-4357-8557-b31b5865448a" class=""><br/>Neural circuits are not the targets for the effects of lethal electric eels called mambas. However they may indeed be involved. There is a study called Mamba Elicitellogenesis (Wagner-Dobler, Grasso, Griffith, Jamieson, Sjostrom &amp; Grizzle, 2001) (arcticles pdf) or fast ejaculation in rodents after various oximes. Clearly the issue is not just lethal but focused on reproduction. However the results are suggestive of an involvement of the autonomic nervous system (ANS). From a brief review, it seems that the nitrone toloid K778 has little effect, while other nitrones accelerate or block the effect of Soman on &quot;some aspect of behavior&quot; (presumably this is not just an autonomic effect related to reproduction).To determine the effects on emotional behavior is more difficult in a mammal as it is more complex. Much has been learned in recent years about emotional circuits in rodents. The studies attempting to mimic the effects of mambas look a little old, over time.So I conclude that:<br/>Embryotoxic effects that kill embryos (Tabuchi, 1981), or reduce development of a few neurons (Windrem, 1990) are not the neural mechanisms of the mamba and other oximes.You may be able to get some relief from a nonselective Nitrone such as KGBT-327 that kills modulation of N-acetyl aspartate in various tissues including cerebral spinal fluid (Kilburn &amp; Coyle, 2000).Avoiding mambas is, of course, very good practice in a tropical area!<br/><br/></p><p id="1fb8a580-3899-465a-b8d6-309c138882ce" class="">
+</p><p id="a53ad740-0c26-4ac6-af75-40dbdda414de" class=""><br/>Neural circuits are monitored via ElectroEncephaloGraphs, more specifically, MagnetoEncephalography and ElectroCorticoGraphy; see e.g. Norretranders, Int. J. Psychophysiology, 2008. In the experiments, electrodes are located at the scalp and in the brain (that is, the electrodes are shaped as caps).The assumption that finer scale neural organising is better dealt with microscopic units is incorrect, as that cannot account for the different circumstances in cases of epilepsy vs healthy brains. ElectroEncephaloGraphs are discussed in much more detail in Aerts et al 2012.<br/></p><p id="703ceb1f-9c95-495a-b70b-8302fc85c6ec" class="">
+</p><p id="20c11746-8020-458b-9497-99c15f9c475e" class="">Neural circuits are pretty much all about electric currents, the only exception are a few specialized synapses in the retina which are inhibited by light.However, it is too early for a complete map of the brain at the molecular level. But classical, as well as modern tracers of electrical activity (excitation and inhibition) are wonderful tools to map neural circuits at the systems level.I am not aware of a researcher who has managed to look at a neuron and record its activity at the nanometer (nm) scale. If presented with the opportunity, you would be the first to map long-range electric currents at this level.<br/>A:<br/>There&#x27;s interesting work going on in brain roadmapping based on analyzing fMRI data. For example, see http://www.nature.com/mp/journal/v10/n3/abs/nmeth.3409.html. <br/></p><p id="8a32a789-5b63-4677-bcca-ea56a8fea4b9" class="">
+</p><p id="05b14f4c-ac73-4b24-88c2-deea8a8f915b" class=""><br/>Neural circuits are composed of and interact with physical structures, i.e. the presence of neurons and their connections regulated by the biophysics that govern interactions between electric charges. Additionally, instead of describing elements in a network as interacting in a rule based &quot;expectation&quot; fashion, effective neural networks describe the activities of these elements in terms a probability distribution. Thus, some geometic analysis of net potential, filed, charge density fields, and their temporal time-series can reveal neural activity and circuit function.Of course, in actuality, neural activity is a chaotic random distribution, and the most one can hope for is that some snapshots of net potential, or some interpretations of the results of these measurements, have some functional relevance. Current experiments measuring some aspect&#x27;s of neural activity are finding they have &quot;hidden&quot; information, and those have not been efficient in describing or predicting actual neural activities. To a certain extent, robustness is the name of the game in the mammalian brain, and that is certainly an aspect of &quot;averaging&quot; data.<br/></p><p id="8b96e5b9-9c5b-4438-8882-dbda355ba9e6" class="">
+</p><p id="85fdcf61-360f-4880-8471-7841bff21a58" class="">
+</p><p id="8831d87e-1923-42b5-b39b-1809b85ec242" class="">Neural circuits controlling reproduction, attention and learning,experience strong electrical activity as they interact with your senses. Hamsters experience visual phase alternation while under the influence of pulsed magnets.https://aap.ersjournals.com/aapt/journal/VA149/4.11/10.1176/002214041018600916 Experimenter aimed pulsed magnetics via a helmet allows proper exclusion of sensory stimulation by those not involved in the study. &quot;The experimental animal was trained to activate the sensor during a given phase&quot;. The tasks in question involved making photopic spatial discriminations. Asymmetric magnetic pulsesdelayed alternations in photopic brightness at the cortical, thalamic or ganglion level.<br/>Observations allow implication of cortical or thalamic oscillatory activity in perceptual alternation and its regulation.https://www.ncbi.nlm.nih.gov/m/pubmed/28179069/Information and mechanics maybe also affect magnetism at an accelerated scale.Generating new Biomaterials Paperhttps://www.rsc.org/chemistryworld/2006/October/0692.htmlLead author: Timothy, Guang (Rutgers U); Raghavendran K. (Rutgers U); Pavlin M.H.B. (Rutgers U); Artemov R. and Enkhbayar S. (Rutgers U)&quot;Electrical stimulation of embryonic spinal cord and Neurospora crassa shows that tissue responses can be modulated by orienting fibers and plates of opposite alignment&quot;https://www.ncbi.nlm.nih.gov/m/pubmed/22759712Paper Structure:<br/>Abstract: This study was designed to investigate the impact of agarose structure, either as a microbead supported hydrogel (HS) or as a fiber supported hydrogel (FS), on the in vitro regeneration of new tissue. The topography of the two gels was fabricated using a replica molding approach, based on a Thin Film Offset key. The two gels were then characterized using contact angle goniometry, texture analysis, and scanning electron microscopy. The sheet resistance of the FS proved to be more than an order of magnitude less than that of the HS, implying a greater effective conductivity of the FS. Preliminary cell culture experiments were conducted with Neurospora crassa and chick myoblast cell suspensions for 28 days and Neuro 2 A neuroblastoma cells for 21 days. It was found that the FS supported more growth than the HS due to its greater electrical conductivity. In one case the FS supported the growth of an array of cells spanning the full length of the gel, whereas the HS produced vertical arrays of growing cells. Thus, the FS has the capacity to guide cell assembly.<br/>Paper Wikipedia Article: https://en.wikipedia.org/wiki/Spinal_cord_electrical_stimulation (linking to Wikipedia Article needs an explanation, but it is published freely and you should)Neural Activity in the Central Nervous System8TH BROWN SESSON: NEW INSIGHTS AND PERSPECTIVES ON NEURONAL MEDIATORS, PLASTICITY, AND FUNCTIONhttp://ubcla.berkeley.edu/UCBSPH143/contents/class3shitam2.htmFigures: 8<br/>Figure 7, The excitatory postsynaptic field of a pyramidal cell. An inactivating class of short-lasting spike potential which appears most strongly when a single-shock stimulus is applied to an afferent input. Figure 9. The putative flow of excitatory spike potentials from several afferent sources X1–X9. Emphasis on role of axon collaterals. Figure 10. The flow of excitatory and inhibitory post-synaptic potentials generated in the dendritic region of cortical pyramidal cells. Note that the duration of successive inputs may be greatly different. Figure 5. Electrically coupled co-operative neurons may change their firing rate in parallel. Figure 8. Alternating firing patterns with repetitive stimulation of sites on the CS. The firing changes from epochs of uniform &gt; 100 Hz to patterns in which the impulses are concentrated to a single pole. The appearance of multiple firing patterns reflects potassium accumulation.<br/>N.M. IVORY&quot;Modulation of afferent nerve activity and the generation of rhythmic and nonrhythmic behaviors&quot;https://www.ncbi.nlm.nih.gov/m/pubmed/17916500/Figure 9, Schematic diagram of the intracellular originsof the excitatory postsynaptic potential. A given afferent<br/>input may activate and depolarize one or several cellpopulations (represented in Fig. 9 as a set of parallel<br/>&quot;rotor-clutch&quot;&quot;Bistable mechanisms of thalamo-striatal transmission&quot;http://www.pnas.org/content/104/34/12304.fullWaveform Priors for Prioritizing ClassifiersWu, Li.http://www.cs.cmu.edu/afs/cs/user/mcb/www/MI-Paper/shing-2006-lln.pdf<br/>Online Information Processing Research<br/>We define the online information processing environment as a system in which a stream of information in a sequence of discrete events flows through and is processed by multiple agents. A fundamental issue in any task timing system is how to design coordination and cooperation mechanisms among multiple interdependent real-time tasks. Each task runs concurrently at different time scales, i.e. at performance levels below the real-time deadlines of the individual tasks, and they are coupled by shared finite resources such as computation and communication bandwidth. The system must arrive at a global operating point by acquiring and using information about the state of the system. This description of the general environment applies to many problems and applications including network requests for collaboration with video conferences, design of real-time process scheduling, coordination of multiple latency-intolerant sensors and browsers for mission-critical internet-wide packet storms, and online advertising.<br/>Sci. Connect. (2010) 2: 70–77.http://digital-library.theiet.org/content/journals/10.1049/config.2010.00998Content-based analysis (CBA) is a time-varying signal processing problem. Unlike previously studied problems such as video analysis and person recognition, the emphasis of CBA research has focused on the design of combinatorial algorithms to find associations between time series. Contrary to most signal processing methods, inverse filtering is not capable of proposing hypotheses on the nature of time varying associations among user interactions. This paper proposes a delay-tolerant associative function based on smoothing and prediction. For some signals, the new function outperforms existing delay-tolerant consumer grade functions. The experimental evaluations validate the effectiveness of the function for activities of daily living and novel exploratory Signal Comm. (2013) 4: 203–221http://journals.yfwis.org/loi/content/143/5/9.long.Discovery and learning efficiency in a data-parallel environment: New algorithm, network, and applications<br/>In the area of machine learning, many heuristics, algorithmsand mechanisms have been proposed to tackle the problem of<br/>classifying incoming data into suitable pre-defined categories.<br/>However, very few of these address the issues inherent in<br/>real-world applications of the classification task. In this<br/>text, we define a new information processing paradigm called<br/>&quot;Data-Parallel Categorization&quot;. In the proposed paradigm, a<br/>large pool of independent computing systems work together<br/>to classify incoming unlabeled data. Each computing system<br/>runs its own learned classification algorithm on a mutually<br/>shared subset of the input space using a pipeline distributed<br/>computing model. The collective classification results from<br/>all of the individual computing systems are then combined<br/>to generate the final classification. In some respects, the<br/>proposed paradigm and the Data-Parallel Classification (DPC)<br/>algorithm we have developed are akin to a neural network in<br/>which a large pool of neurons are interconnected to form the<br/>neural<br/></p><p id="32600eb0-4a4c-4fbd-90bc-1d2365574a4c" class="">
+</p><p id="109e19c4-9838-4e18-8efe-bdd76743deae" class="">Neural circuits can be approximated with a linear circuit.Consider the parallel circuit below:<br/>simulate this circuit – Schematic created using CircuitLaba is Rc, the parallel resistance of a neuron&#x27;s membrane (unknown). We can make this circuit more realistic by adding a capacitor with a time-constant mu Rc:<br/>simulate this circuitThis is a linear circuit that approximates a neuron receiving a constant input over time.The scaled voltage phi across a neuron&#x27;s membrane is $$V_{m1} = V_{ext} \frac{\mu}{R_C} (1 + \exp{[\mu (\phi - \phi_1)]})$$ where the external voltage is$$V_{ext} = V_{E} - V_{N}$$Using the linear approximation here, we have$$\mu (\phi - \phi_1) = \ln{\frac{V_{m2}}{V_{m1}}}$$$$\phi = \phi_1 + \mu \left(\frac{V_{m2}}{V_{m1}} - 1\right)$$so that$$\phi&#x27; = \phi_1 + \mu V&#x27;_{m2} \\%\frac{d \phi&#x27;}{dt} = \\frac{\frac{\partial \mu(\phi_1 + \phi)}{\partial \phi} ((V_2 - V_1)\mu + \frac{dV_{m2}}{dt}) - \mu(\frac{V_2 - V_1}{R_C} + \frac{\partial}{\partial \phi}V_{m2})}{\exp((\frac{\partial}{\partial \phi}V_{reg}))} \\\boxed{\ddot{\phi} = \ddot{\phi_1} + \frac{1}{\mu} \dot{\phi} \dot{V}_{m2} - \ddot{\phi_1} V^2_{m2} + 0(\ddot{V}_{m2})}\\R_c \ddot{\phi} = \ddot{\phi_1} - V^2_{m2} \\\boxed{\ddot{\phi} = \underbrace{(\ddot{\phi_1} - \frac{V^2_{m2}}{R_c}) }_{\ddot{\phi_1} + \frac{\dot{\phi_1} V_{m2}}{R_C}} + \frac{\dot{\phi_1} \dot{V}_{m2}}{R_C} - \frac{V^2_{m2} \dot{\phi^2_1}}{R_C^3}} \\%R_C \ddot{\phi} = \frac{b \ddot{\phi_1} + c \dot{\phi_1}}{a + b\phi_1} - \frac{c \dot{\phi_1}^2}{a + b\phi_1} + \frac{c V_m}{1 + b \phi_1} - \frac{V_m^2 \dot{\phi_1}}{(1 + b\phi_1) R_C}\\\ddot{\phi} = \dot{\phi}_n \dot{\phi}_m \ddot{\phi_M} - \frac{\dot{\phi}_n \dot{\phi}_m}{a} (V^2_n + V^2_m) + \frac{c V_m}{(1 + b \phi_M)(1 + b \phi_m)} - \frac{V_n V^2_m \dot{\phi}_n}{(1 + b\phi_M)(1 + b \phi_m)}\\%\ddot{\phi} = \dot{\phi_M} \dot{\phi_m} \ddot{\phi_m} - \frac{\dot{\phi_M} \dot{\phi_m}}{a} (V^2_M + V^2_m) + \frac{c V_M V_m}{(1 + b \phi_M) (1 + b \phi_m)} - \frac{V_m V^2_M \dot{\phi^2_m}}{(1 + b \phi_M) (1 + b \phi_m)} \\\ddot{\phi} = \underbrace{\dot{\phi_n} \dot{\phi_m} \ddot{\phi_M}}_{V_V} - \underbrace{\frac{(\dot{\phi}_n \dot{\phi}_M V^2_M + \dot{\phi}_M \dot{\phi}_m V^2_m) + \dot{\phi}_n \dot{\phi}_m V_n V_m}{(1 + b \phi_n) (1 + b \phi_m)}}_{0 \le \pi_V (1 + b \phi_n) (1 + b \phi_m)} \\\text{This depends on } \dot{\phi}_n \dot{\phi}_m \text{ and } \pi_V (1 + b \phi_n) (1 + b \phi_m) \\\Gamma = |A| \cos(\phi_m - \phi_M) \approx \text{Constant} \approx \Gamma_0 \\\Gamma = 2 \sqrt{\Gamma_0} \, \cos(\phi_m - \phi_n) \\\Gamma = 2 \sqrt{\Gamma_0} \cos(\phi_n - \phi_M) \cos(\phi_m - \phi_n) + 2 \sqrt{\Gamma_0} \sin(\phi_n - \phi_M) \sin(\phi_m - \phi_n)\\\boxed{V_V = V_n V_m \frac{\sqrt{\Gamma_0}}{2 \sqrt{\Gamma_L}}} %was V_L*sin(\phi)\end{align}where $\Gamma_L$ is the resonant frequency measured when trapping ions to a very strong parabolic trap.Under these conditions, the voltages across the left and center nodes of the circuit are $V_L$ and $V_M$ respectively. This relationship obeys Ohm&#x27;s Law.Thus, the circuit is a good approximation of a collection of parallel neurons.<br/>If we instead want a time-independent result so that $V_M$ is always zero, we can place two resistors in series and one between the two nodes.This is a linear circuit that approximates two neurons in series:<br/>simulate this circuitThe voltage across this circuit is$$\begin{align} &amp;\phantom{_\Gamma} V_{n-1} (1 + b \phi_{n-1}) \phantom{\frac{V_{n-1} (1 + b \phi_{n-1})}{\mu}} &amp;&amp;\\+&amp;\phantom{_\Gamma} V_n (1 + b \phi_n) &amp;&amp;\\+&amp;\phantom{_\Gamma} V_{n+1} (1 + b \phi_{n+1}) \phantom{\frac{V_{n+1} (1 + b \phi_{n+1})}{\mu}} &amp;&amp; \text{ (Resistors in series are additive in potentials)} \\&amp;= \left(V_{M-1} (1 + b \phi_{M-1}) + V_{M+1} (1 + b \phi_{M+1})\right) \left(\frac{R_{M-1} + R_M}{R_L} + \frac{R_M + R_{M+1}}{R_C}\right) \\&amp;= \ln\left(\frac{V_M + V_{M+1}}{V_{M-1} + V_{M+1}}\right) + R_C \dot{\phi}_M \<br/></p><p id="4c342ec2-442e-4317-8924-71f1f20bddb5" class=""><br/>Neural circuits can be approximated with circuit-theoretical models, particularly electrical circuits. The current through a circuit runs through various nodes which can function as input, or output. To model a neural circuit, the biophysical properties of individual neurons are presumable simplified.To answer your question, a neural correlate of behaviour could be observed as spikes in the neural output in response to particular stimuli. It is a simplification to assume that the spike is actually a class, but it is useful. If there are low concentration of a particular input spiking when and only when you see evidence of certain behaviour out of people, this is a neural correlate of that behaviour, and it is a strong one. If there are for example certain impulses that correlate with high suspicion, then you can use time-locks (adding delays) to remove the shorter-diagnostic-time outliers.One particular case is the direction-detect-y-angle-correlates-direction question. This happens with the nav and vestibular systems, and it is a neural correlate of orienting to an agency when you have just failed your first question.<br/></p><p id="c364587d-ea21-4b7c-8281-827723494587" class="">
+</p><p id="efefdf9e-d1f0-4b34-b850-3bc30c724fe5" class="">Neural circuits can be approximated with analog circuits like this:<br/>Source: &quot;Memristor and Memory: Models and Devices&quot; by Ian F. Akyildiz, Bing Wan and Tuck C. Nguyen<br/>Current is described by Kirchoff&#x27;s Current Law,<br/>$I= I_1 + I_2 +...$<br/>or<br/>$I = \iota + B(u - \bar{u})$<br/>where the subscript notation indicates that each term is a constant resistance. Practical memristors can function with non-linearly functions of the form above. In particular, they could have both time correlated and time anti-correlated noise (as would be expected from thermal noise).<br/>Source: The New Physics of Plastic Logic: Making Circuits, Code, Memory and Truth Machines Work by Seth LloydSo the physical laws that describe e.g. memristor dynamics are the same as the physical laws that describe Candle dripping and Bulb lighting. The only difference is that the first case involves quantum mechanics and the second one involves thermal-electricity.<br/></p><p id="6b821f4f-804c-4838-a779-0b481eb3c173" class="">
+</p><p id="beb52574-88fc-4f19-8783-e33c1d186237" class="">Neural circuits can be approximated with basic physics quantities (AM/FM radio) which can coherently affect behavior. This has been rather systematically established since the 1970s. In a nutshell, a cable can transmit certain limited frequencies of electric and magnetic fields with different strengths and thus can either stimulate or inhibit different neural pathways. However, as any complex biological entity, the details of such mechanisms are far from being completely understood.Open Access paper:&quot;Nonlinear synaptic transmission mediated by magnetite particles in the nervous systems of monkeys and frogs&quot; - (Abbott Robert L et al. 2004)Biol. Bull. 210, 267–278. doi: 10.2307/3589543Citations used in paper:Wikipedia - biogenic amine neuromodulatorWikipedia - hormane neuromodulatorWikipedia - inotropic neuromodulatorWikipedia - peptide neuromodulatorWikipedia - cholinergic neuromodulatorWikipedia - nicotineWikipedia. - pseudo-ephidyl receptorsWikipedia - BK channelWikipedia - AMPARWikipedia - NMDA receptorWikipedia - GABA receptorWikipedia - CCK receptor<br/>ReferencesEph academics summaryElectromagnetic stimulation from NIMH publicationsABCOfEMS.org<br/></p><p id="5dd02143-5494-4af5-a20c-509d7d0451d4" class="">
+</p><p id="212e2b7a-51c8-4787-9181-c5db7bf7692b" class="">Neural circuits can be approximated with equivalent electrical circuits that includes resistances and capacitances that add electrical properties that simulate the activities of the nervous system. Every proposed neuro-computer needs the total equivalent circuit or the realization in biological substrate.Neurelec synapse/Spiking neuron circuit<br/> HCN membrane circuit<br/> Memristor and dynamics of short and long-term memory.<br/> De Schutter/Element Circuits musculotopic mapping of simulated action potentialsMcCourt/Nature NeuroscienceElectrophysiological approachMcKinstoeyk/CircuitsKoh/Nature Biotechnology.<br/>http://pangea3d.elte.hu/_singleitem/792137a827b61/Papers/IJRN81-185569_0262.pdf<br/></p><p id="c5ab6e56-ffb1-4d81-bbef-06bc0c94cd58" class="">
+</p><p id="24e68666-59a8-4a8d-840c-837f3281a7e4" class="">Neural circuits can be approximated with physical models (lumped circuits) that derive parameters from measured synaptic weights, and estimate the population activity of a cortical column.Jones, Hill and Flores-Gonzalez (2009) &quot;Deterministic Model of Valence and Arousal as a Function of Time, Synchrony and Fraction of Emotive Neurons in Cortical Circuits&quot;Extremely detailed mechanistic models might make predictions such as: &quot;how does synaptic depression change membrane potential?&quot;. Transient Functional Connectivity (TC) models might predict changes in oscillator strength between networks.The idea of &quot;wiring diagrams&quot; is a reformulation: What statistical patterns do we saw with respect to &quot;same&quot; and &quot;different&quot; groups of contacts, neurons, inputs etc. We know that inferring what a functional unit in a brain region does is a statistical (approximate Bayesian inference) problem.<br/><br/><br/>Neural circuits are electrical circuits.The electrical signals in all living tissue are incredibly complex and vary widely depending upon the species, the state of the tissue (i.e. direction of force applied, fatigued), the presence of neurotransmitters, neuronal spike rates, etc.Even the slowest nerve signaling, e.g. Golgi, is about one volt.No one has said, as far as I know, that the braindiff is one newton, one newton per micrometer, one volt per micrometer, one ampere per micrometer, etc.Instead, one could say that various measures of capacity support the notion that the brain actually resonates in ways that have relevance to methodologies such as frequency modulation, wavelets, fractal geometry, and memory, but exactly how is still to be determined.Muscle force and tension may be modulated by various secreted neurochemicals that affect motor neurons indirectly by a variety of different mechanisms.Electrolytes (i.e. sodium and potassium) may also be used to modify contraction strength.For example, potassium is released from nerve endings while sodium accumulates.The two combine to create electrochemical gradients that tend to prevent the muscle (or muscle cell) from contracting.This is called the sodium-potassium pump.Smaller mammals, such as lemurs and monkeys, tend to have large brains for their body size and it is thought that electric fields imposed on the neurons are permissive for the indicated behavior (i.e. running).These pulses (electrochemical ion gradients) also likely generate so-called &quot;attractor&quot; states, in which if a small amount of force is applied, the strength of the signal helps determine both the type of movement as well as the amount of force required for the movement itself.These (i.e. attractors) presumably may be strengthened by training and may be related to learning.Recordings of neuronal responses in the hippocampus indicate that these pulses are imperceptible to the conscious brain, but may help determine if one memory is recalled more easily (or how quickly a second memory is absorbed) than another.<br/><br/><br/>Neural circuits are most commonly studied through electrophysiological methods. In animals, methods of doing this include EEG, intracortical, epidural and subdural recordings, depth electrodes, single nerve recordings and, in humans, scalp and intra-cranial EEG, local field potentials, source localization as well as invasive microelectrode recordings. In all these cases, electrical potentials and/or currents can be recorded either through extra- or peri-cellularly coupled electrodes. In vivo, the chemical milieu can be modeled as a background of hemodynamical parameters. These sources (among many other measurable variables) are referred to as ERPs. In the case of ERPs associated with cognitive function, they are principally derived from three levels of analysis, sensory, cortical or cognitive.These primary sources of information, distinguishable from one another due to changes in the refractory characteristics of dendritic fields, are first filtered (on the basis of temporal characteristics) and passed to a model of cortical processing. The latter, because of its multiple stages and morphological dependencies, depends sensitively on the coupling to sub-cortical systems integrated in the model. Latter, ERP can be the basis of a large number of statistics generated from stimulus series, by methods such as mass-univariate or scaler and correlation analyses. [1]References:<br/>Stefanics, M., Talamini, R., Bussjordan, H. P., Brücke, C. C., Hirel, P., [Even Louhinière and Olifson], M. (2007). Liaison Psychiatry. Behavioural epilepsy surgery. Part 1. Current concepts.15: 280-291. Stefanics, M., Kurt, U., Lakomski, P. D., Plomp, N. B., Rotaresu, F., Ruigrok, R., and Syrjämäki, A. (2008). Presurgical evaluation of language in temporal lobe epilepsy, Open Access Physiology and Pharmacology Journal of the Physiology. 2009, 4, 5-22 Mountcastle, V. B., 1979. Computational Analysis of the Steady-State Visual Normal Blind Spot Disc. Percept. Psychophys. 27: 319-323. Wilson, M. A. and Cowan, G. A., Excitation Waves in A Small Frozen Neural Network Model and their Role in Computational Thought. Ru Duinkerken. Koelsch, A. and Friederici, A. d, 2004. A network model of auditory language processing. J. Comp. Biol. 15: 277-292. Mangul, C., Decroupin, E.R., Hellwig, C.J., and Winterer, S., 2012. Neural Assemblies of Hippocampal Gyrus with Extralemniscal and Xiphio-Strial Fields. Neurosci. Biobehav. Rev. Friederici, A. d and Chomsky, N. view Poeppel, D., 2007. The Neural Realm of Language. An Introduction to Syntax.<br/></p><p id="99ea50c6-6104-4d07-b134-f6ed071d7fa4" class="">
+</p><p id="cdec1551-9972-482c-863f-d9e9eb9b1114" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
